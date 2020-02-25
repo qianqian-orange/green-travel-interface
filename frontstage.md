@@ -18,18 +18,19 @@
  请求路径：
 	http://localhost:8080/green_travel/api/getAllAdvertisement.action
 	
+
 	返回数据
 	{
-    "code": 0,
-    "data": [
-        {
-            "ad_id": 1,
-            "ad_path": "/upload/advertisement/2020-02-06/7488563750074331.jpeg",
-            "ad_date": "2020-02-01",
-            "ad_link": "https://pages.tmall.com/wow/a/act/tmall/dailygroup/147/wupr",
-            "ad_status": 0,
-            "ad_exist": 0
-        },
+	"code": 0,
+	"data": [
+	    {
+	        "ad_id": 1,
+	        "ad_path": "/upload/advertisement/2020-02-06/7488563750074331.jpeg",
+	        "ad_date": "2020-02-01",
+	        "ad_link": "https://pages.tmall.com/wow/a/act/tmall/dailygroup/147/wupr",
+	        "ad_status": 0,
+	        "ad_exist": 0
+	    },
 		.
 		.
 		.
@@ -58,11 +59,11 @@
     }
   ```
 
-	get方法
-请求路径
-http://localhost:8080/green_travel/api/likeCommodity.action?currentPage=1&pageSize=2&name=a
-请求参数
-currentPage=1&pageSize=2&name=a
+  get方法
+  请求路径
+  http://localhost:8080/green_travel/api/likeCommodity.action?currentPage=1&pageSize=2&name=a
+  请求参数
+  currentPage=1&pageSize=2&name=a
 
 返回数据
 {
@@ -101,12 +102,12 @@ currentPage=1&pageSize=2&name=a
     }
   ```
 
-	  
+
   get方法
-请求路径
-http://localhost:8080/green_travel/api/totalCommodity.action?name=a
-请求参数
-name=a
+  请求路径
+  http://localhost:8080/green_travel/api/totalCommodity.action?name=a
+  请求参数
+  name=a
 
 
 返回数据
@@ -140,14 +141,15 @@ name=a
       }
     }
   ```
-	get方法
-请求路径
-http://localhost:8080/green_travel/api/getCommodityByid.action?id=1
-请求参数
-id=1
+
+  get方法
+  请求路径
+  http://localhost:8080/green_travel/api/getCommodityByid.action?id=1
+  请求参数
+  id=1
 
   返回数据
-	{
+  {
     "code": 0,
     "data": {
         "com_id": 1,
@@ -173,21 +175,23 @@ id=1
     body: {
       id: 1,
     },
-  response:
+  response:但是放送地方
     {
-      code: 0
+      code: 0，
+     	integral: 100, // 用户当前积分
     }
   ```
+
     积分兑换商品接口
   进行兑换时，传用户id和商品id，然后会判断积分是否足够，在放进订单表，同时操作用户积分增减，商品表存储量减一
-传进参数  
-	{
-	"user_id":456654,			//用户id
-	"com_id":12					//商品id
-	}
-方法：post
-路径
-http://localhost:8080/green_travel/api/conversion_order.action
+  传进参数  
+  {
+  "user_id":456654,			//用户id
+  "com_id":12					//商品id
+  }
+  方法：post
+  路径
+  http://localhost:8080/green_travel/api/conversion_order.action
 
   response:
     {
@@ -231,15 +235,16 @@ CREATE TABLE `signIn` (
       }
     }
   ```
+
     方法：get
-  
+
     路径:
-	http://localhost:8080/green_travel/api/defaultSignin.action?year=2020&month=12&user_id=48142178
-	参数
-	year=2020&month=12&user_id=48142178
-  
+  http://localhost:8080/green_travel/api/defaultSignin.action?year=2020&month=12&user_id=48142178
+  参数
+  year=2020&month=12&user_id=48142178
+
   返回数据
-{
+  {
     "code": 0,
     "data": {
         "days": [
@@ -249,8 +254,8 @@ CREATE TABLE `signIn` (
         ],
         "id": 8
     }
-}
-  
+  }
+
 + `update`
 
   ```javascript
@@ -261,28 +266,29 @@ CREATE TABLE `signIn` (
   	body: {
       id: 8,
       user_id: 1,
+      integral: 100 // 用户当前积分
     }
   response:
   	{
       code: 0
     }
   ```
+
       方法：post
-  
+
     路径:
-	http://localhost:8080/green_travel/api/Signin.action
-	参数
-	{
+  http://localhost:8080/green_travel/api/Signin.action
+  参数
+  {
       "id": 8,
       "user_id": 1,
     }
-  
+
   返回数据
-	{
+  {
       code: 0
     }
-  
-  
+
   
 
 ## 四. 等级
@@ -313,14 +319,15 @@ CREATE TABLE `level` (
       data: [100, 0.90909, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     }
   ```
-  
+
   	请求方式	GET
-	请求路径
-	http://localhost:8080/green_travel/api/getAllLevel.action
-	参数
-	无
-	返回数据
-	{
+
+  请求路径
+  http://localhost:8080/green_travel/api/getAllLevel.action
+  参数
+  无
+  返回数据
+  {
     "code": 0,
     "data": [
         0.5,
@@ -339,7 +346,7 @@ CREATE TABLE `level` (
         0.0,
         0.0
     ]
-}
+  }
 
   > 这接口要返回每个等级的占有比例，一共有15个等级。
 
@@ -406,6 +413,7 @@ CREATE TABLE `donate` (
       code: 0
     }
   ```
+
    请求方法	POST
   请求方式
   http://localhost:8080/green_travel/api/insertPublicWelfare.action
@@ -421,8 +429,8 @@ CREATE TABLE `donate` (
   返回参数
   {
     "code": 0
-}
-  
+  }
+
 
   > 有些字段是有默认值的，这些就不需要传了。
 
@@ -459,8 +467,8 @@ CREATE TABLE `donate` (
   > 注意status的值为1，exist为0,  destory为0 也就是审核通过的且管理员没有删除的这些公益要查出来, 即使用户删除了也要查出来。
   >
   > 提示：使用派生表 
-  
-  
+
+
   请求方法	GET
   请求方式
   http://localhost:8080/green_travel/api/getPublicWelfare.action
@@ -486,12 +494,12 @@ CREATE TABLE `donate` (
             "donate": 55.400000000000006,
             "status": 1
         },
-		.
-		.
-		.
-		]
-	}
-  
+  	.
+  	.
+  	.
+  	]
+  }
+
   
 
 + `find`
@@ -526,13 +534,13 @@ CREATE TABLE `donate` (
   ```
 
   > 返回的数据结果与上面list接口是一样的，只是这里返回的数据只需要一条，根据id去匹配。
-  
-  
+
+
   请求方法	GET
   请求方式
   http://localhost:8080/green_travel/api/getPublicWelfareByid.action?id=2342
   传入参数
-	id=2342
+  id=2342
   返回参数
   {
     "code": 0,
@@ -553,12 +561,12 @@ CREATE TABLE `donate` (
             "donate": 55.400000000000006,
             "status": 1
         },
-		.
-		.
-		.
-		]
-	}
-  
+  	.
+  	.
+  	.
+  	]
+  }
+
   
 
 + `donate`
@@ -582,19 +590,19 @@ CREATE TABLE `donate` (
   >
   > 注意需要开启事务，出现异常需要事务回滚。
 
-	请求方法	POST
+  请求方法	POST
   请求方式
   http://localhost:8080/green_travel/api/userDonate.action
   传入参数
-	{
-	"user_id": 123456,
+  {
+  "user_id": 123456,
     "integral":18.6,
     "id": 2342	
-	}
+  }
   返回参数
-	{
+  {
     "code": 0
-	}
+  }
 
 
 + `rank`
@@ -623,14 +631,14 @@ CREATE TABLE `donate` (
   >
   > 注意需要按高到低排序，可以使用order by xxx desc的语法, 或者查出来之后再排序也行。
 
-	请求方法	GET
+  请求方法	GET
   请求方式
   http://localhost:8080/green_travel/api/getDonate.action?id=2342&pageSize=4&currentPage=1
   传入参数
-	id=2342&pageSize=4&currentPage=1
+  id=2342&pageSize=4&currentPage=1
   返回参数
 
-	{
+  {
     "code": 0,
     "data": [
         {
@@ -649,4 +657,4 @@ CREATE TABLE `donate` (
             "name": "kkk"
         }
     ]
-}
+  }

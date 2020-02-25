@@ -45,14 +45,14 @@ CREATE TABLE `merchandise` (
     }
   ```
 
-	post方法
-请求路径
-http://localhost:8080/green_travel/api/pictureUtil.action
-请求参数
-{
+  post方法
+  请求路径
+  http://localhost:8080/green_travel/api/pictureUtil.action
+  请求参数
+  {
      “name”: 'merchandise',
      “merchandise”: (binary)
-}
+  }
 
 返回数据
 {
@@ -81,25 +81,25 @@ http://localhost:8080/green_travel/api/pictureUtil.action
       code: 0
     }
   ```
-  
-  
+
+
   + `add` 商品添加
-post方法
-请求路径
-http://localhost:8080/green_travel/api/insertCommodity.action
-请求参数
-{
-  	"name": "小郑",
-  	"description": "1asd11切克闹6666",
+    post方法
+    请求路径
+    http://localhost:8080/green_travel/api/insertCommodity.action
+    请求参数
+    {
+    "name": "小郑",
+    "description": "1asd11切克闹6666",
     "status": 1,
     "stock": 111,
     "integral": 111,
     "path": "/upload/merchandise/2020-02-11/6662390724429095.jpeg"
-}
-返回数据
-{
-	"code": 0
-}
+    }
+    返回数据
+    {
+    "code": 0
+    }
 
 
 + `delete`
@@ -119,19 +119,19 @@ http://localhost:8080/green_travel/api/insertCommodity.action
   ```
 
   > 删除可以是批量删除，当id只有一个时就是单个删除，单个或多个删除是通用的。
-  
+
   + `delete` 商品删除
-post方法
-请求路径
-http://localhost:8080/green_travel/api/deleteAllCommodity.action
-请求参数
-{
-	"ids":[44,212]
-}
-返回数据
-{
-	"code": 0
-}
+    post方法
+    请求路径
+    http://localhost:8080/green_travel/api/deleteAllCommodity.action
+    请求参数
+    {
+    "ids":[44,212]
+    }
+    返回数据
+    {
+    "code": 0
+    }
 
 + update`
 
@@ -154,21 +154,21 @@ http://localhost:8080/green_travel/api/deleteAllCommodity.action
       code: 0
     }
   ```
-  
+
 + `update` 商品更新/修改
-post方法
-请求路径
-http://localhost:8080/green_travel/api/updateCommodity.action
-请求参数
-{
-	"id": 1,
+  post方法
+  请求路径
+  http://localhost:8080/green_travel/api/updateCommodity.action
+  请求参数
+  {
+  "id": 1,
   	"name": "小吴",
   	"description": "1asd11切克闹",
     "status": 1,
     "stock": 111,
     "integral": 111,
     "path": "/upload/merchandise/2020-02-11/6662390724429095.jpeg"
-}
+  }
 
 返回数据
 {
@@ -237,12 +237,12 @@ currentPage=1&pageSize=2&name=a
   		data: 15
     }
   ```
-  
+
   get方法
-请求路径
-http://localhost:8080/green_travel/api/totalCommodity.action?name=a
-请求参数
-name=a
+  请求路径
+  http://localhost:8080/green_travel/api/totalCommodity.action?name=a
+  请求参数
+  name=a
 
 
 返回数据
@@ -250,7 +250,7 @@ name=a
 	“code": 0,
   	"data": 15
 }
-  
+
   > 返回根据模糊查询后的数据总条数
 
 ## 二. 广告管理
@@ -293,12 +293,13 @@ CREATE TABLE `advertisement` (
       code: 0,
   		path: "/upload/advertisement/2020-02-11/6531908940093578.jpeg"
     }
-  ```
   
+  ```
+
   post方法
-请求路径
-返回数据
-同商品图片一样
+  请求路径
+  返回数据
+  同商品图片一样
 
   > 上传图片的时候需要新增一条广告数据，数据的除了时间，图片路径外都是默认的。
 
@@ -319,18 +320,19 @@ CREATE TABLE `advertisement` (
   	{
       code: 0
     }
-  ```
   
+  ```
+
   post方法
-请求路径
-http://localhost:8080/green_travel/api/updateAdvertisement.action
-请求参数
-{
+  请求路径
+  http://localhost:8080/green_travel/api/updateAdvertisement.action
+  请求参数
+  {
       "id": 1,
       "status": 0,
       "outside_link": "https://pages.tmall.com/wow/a/act/tmall/dailygroup/147/wupr",
       "path":"/upload/advertisement/2020-02-06/7488563750074331.jpeg"
-}
+  }
 
 返回数据
 {
@@ -351,18 +353,19 @@ http://localhost:8080/green_travel/api/updateAdvertisement.action
   	{
       code: 0
     }
-  ```
   
+  ```
+
   post方法
-请求路径
-http://localhost:8080/green_travel/api/deleteAllAdvertisement.action
-请求参数
-{
-	"ids":[44,212]
-}
-{
-	"code": 0
-}
+  请求路径
+  http://localhost:8080/green_travel/api/deleteAllAdvertisement.action
+  请求参数
+  {
+  "ids":[44,212]
+  }
+  {
+  "code": 0
+  }
 
 + `list`
 
@@ -376,22 +379,23 @@ http://localhost:8080/green_travel/api/deleteAllAdvertisement.action
       create_time: {"max":"","min":""},
       status: -1
     }
-response:
+  response:
   	{
       code: 0,
       data: []
     }
-  ```
   
+  ```
+
   > status: -1是全部，0停用，1启用
   >
   > create_time: 起始日期和结束日期
-  
+
   get方法
-请求路径
-http://localhost:8080/green_travel/api/getAdvertisement.action?currentPage=1&pageSize=4&status=1&create_time={"max":"2020-02-10","min":"2020-02-03"}
-请求参数
-currentPage=1&pageSize=4&status=1&create_time={"max":"2020-02-10","min":"2020-02-03"}
+  请求路径
+  http://localhost:8080/green_travel/api/getAdvertisement.action?currentPage=1&pageSize=4&status=1&create_time={"max":"2020-02-10","min":"2020-02-03"}
+  请求参数
+  currentPage=1&pageSize=4&status=1&create_time={"max":"2020-02-10","min":"2020-02-03"}
 
 返回数据
 {
@@ -426,14 +430,15 @@ currentPage=1&pageSize=4&status=1&create_time={"max":"2020-02-10","min":"2020-02
      	code: 0,
   		data: 7
    }
-  ```
   
+  ```
+
   + `total`
-get方法
-请求路径
-http://localhost:8080/green_travel/api/totalAdvertisement.action?status=1&create_time={"max":"2020-02-10","min":"2020-02-03"}
-请求参数
-status=1&create_time={"max":"2020-02-10","min":"2020-02-03"}
+    get方法
+    请求路径
+    http://localhost:8080/green_travel/api/totalAdvertisement.action?status=1&create_time={"max":"2020-02-10","min":"2020-02-03"}
+    请求参数
+    status=1&create_time={"max":"2020-02-10","min":"2020-02-03"}
 
 返回数据
 
@@ -454,6 +459,7 @@ CREATE TABLE `user` (
   `integral` double unsigned DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 ```
 
 #### 接口
@@ -487,28 +493,27 @@ CREATE TABLE `user` (
   > ​	}
   >
   > }
-  
-  
-  请求方式	GET
-	请求路径
-	http://localhost:8080/green_travel/api/LoginUser.action
 
-	返回数据
-	{
+
+  请求方式	GET
+  请求路径
+  http://localhost:8080/green_travel/api/LoginUser.action
+
+  返回数据
+  {
     "code": 0,
     "user": {
+
+  >​		"id": 1,
   >
-  > ​		"id": 1,
+  >​		"name": 'xxx',
   >
-  > ​		"name": 'xxx',
+  >​		"level": 1,
   >
-  > ​		"level": 1,
+  >​		"growth": 100
   >
-  > ​		"growth": 100
-  >
-  > ​	}
-	}
-  
+  >​	}
+  >}
 
 ## 四. 兑换
 
@@ -529,6 +534,7 @@ CREATE TABLE `conversion` (
   CONSTRAINT `conversion_ibfk_1` FOREIGN KEY (`merchandise_id`) REFERENCES `merchandise` (`id`),
   CONSTRAINT `conversion_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
 ```
 
 > serial_number: 编号，可以使用mysql的uuid函数生成，或者自己创建一串随机字符。
@@ -568,15 +574,16 @@ CREATE TABLE `conversion` (
         }
       ]
     }
+  
   ```
 
-	请求方式	GET
-	请求路径
-	http://localhost:8080/green_travel/api/getAllorder.action?name=ze&pageSize=3&currentPage=2
-	参数
-	name=ze&pageSize=3&currentPage=2
-	返回数据
-	{
+  请求方式	GET
+  请求路径
+  http://localhost:8080/green_travel/api/getAllorder.action?name=ze&pageSize=3&currentPage=2
+  参数
+  name=ze&pageSize=3&currentPage=2
+  返回数据
+  {
     "code": 0,
     "data": [
         {
@@ -595,8 +602,8 @@ CREATE TABLE `conversion` (
             "status": 1,
             "com_stock": 221
         },
-		]
-	}
+  	]
+  }
 
 + `total`
 
@@ -612,17 +619,21 @@ CREATE TABLE `conversion` (
       code: 0,
       data: 10,
     }
+  
   ```
+
   	请求方式	GET
-	请求路径
-	http://localhost:8080/green_travel/api/getTotalorder.action?name=zzz
-	参数
-	name=zzz
-	返回数据
-	{
+  	
+
+  请求路径
+  http://localhost:8080/green_travel/api/getTotalorder.action?name=zzz
+  参数
+  name=zzz
+  返回数据
+  {
     "code": 0,
     "data": 0
-	}
+  }
 
 + `delete`
 
@@ -633,20 +644,23 @@ CREATE TABLE `conversion` (
   	body: {
       ids: [1]
     }
+  
   ```
 
   	请求方式	POST
-	请求路径
-	http://localhost:8080/green_travel/api/deleteOrders.action	
-	参数
-	body: {
+  	
+
+  请求路径
+  http://localhost:8080/green_travel/api/deleteOrders.action	
+  参数
+  body: {
       ids: [1]
     }
-	返回数据
+  返回数据
 
-	{
+  {
     "code": 0
-	}
+  }
 
 ## 五. 公益管理
 
@@ -670,6 +684,7 @@ CREATE TABLE `public_welfare` (
   KEY `user_id` (`user_id`),
   CONSTRAINT `public_welfare_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
 ```
 
 > Reason: 审核不通过时备注的原因
@@ -716,17 +731,18 @@ CREATE TABLE `public_welfare` (
         name: "wujunjia"
       }]
     }
+  
   ```
 
   > 返回的数据包含两种表的内容，public_welfare和user
-  
+
    请求方法	GET
   请求方式
   http://localhost:8080/green_travel/api/getAllPublicWelfare.action?currentPage=1&pageSize=2&name=
-  
+
   请求参数
-	currentPage=1&pageSize=2&name=
-  
+  currentPage=1&pageSize=2&name=
+
   返回数据
   {
     "code": 0,
@@ -747,7 +763,7 @@ CREATE TABLE `public_welfare` (
             "status": 0
         }
     ]
-}
+  }
 
 + `total`
 
@@ -763,20 +779,21 @@ CREATE TABLE `public_welfare` (
       code: 0,
       data: 10
     }
+  
   ```
+
   请求方法	GET
   请求方式
   http://localhost:8080/green_travel/api/totalPublicWelfare.action?name=zz
-  
+
   请求参数
   name=zz
-  
+
   返回数据
   {
     "code": 0,
     "data": 1
-	}
-  
+  }
 
 + `delete`
 
@@ -787,20 +804,23 @@ CREATE TABLE `public_welfare` (
   	body: {
       ids: [1]
     }
+  
   ```
+
   请求方法	POST
   请求方式
   http://localhost:8080/green_travel/api/deletePublicWelfare.action
-  
+
   请求参数
-	{
-	"ids":[2342,32312]
+  {
+  "ids":[2342,32312]
     }
-  
+
   返回数据
   {
     "code": 0
-}
+  }
+
 + `audit`
 
   ```javascript
@@ -812,21 +832,23 @@ CREATE TABLE `public_welfare` (
       id: 3
       reason: ""
     }
+  
   ```
+
    请求方法	POST
   请求方式
   http://localhost:8080/green_travel/api/updateStatus.action
-  
-  {
-	"id": 2342,
-	"status":1,
-	"reason":"不过关"
 
-	}
-  
+  {
+  "id": 2342,
+  "status":1,
+  "reason":"不过关"
+
+  }
+
   返回数据
   {
     "code": 0
-	}
+  }
 
   > 页面有审核的按钮有三个，一个是通过，一个是不通过，一个是重审，无论点击那个按钮都是发这个请求，status，reason的值会做相应的处理。
